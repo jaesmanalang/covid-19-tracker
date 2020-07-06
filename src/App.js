@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import CountryList from './components/country-list/CountryList';
 
 class App extends Component {
   constructor(props) {
@@ -32,18 +33,16 @@ class App extends Component {
           console.log(err);
         }
       });
-      console.log(this.state.countries);
     } catch (err) {
       console.log(err);
     }
   }
 
   render() {
+    const { stats } = this.state;
     return (
-      <div>
-        {this.state.stats.map(country => (
-          <h1 key={country.Country}>{country.Country}</h1>
-        ))}
+      <div className="container">
+        <CountryList stats={stats} />
       </div>
     );
   }
