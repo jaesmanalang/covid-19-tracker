@@ -6,10 +6,16 @@ const CountryList = ({ stats }) => {
   return (
     <div className="country-list">
       {stats
-        .filter(country => country.Confirmed > 200000)
+        .sort((a, b) => b.Confirmed - a.Confirmed)
+        .slice(0, 12)
         .map(country => (
           <Country key={country.CountryCode} stats={country} />
         ))}
+      {/* {stats
+        .sort((a, b) => (a.country.Confirmed > b.country.Confirmed ? 1 : -1))
+        .map(country => (
+          <Country key={country.CountryCode} stats={country} />
+        ))} */}
     </div>
   );
 };

@@ -42,6 +42,7 @@ class App extends Component {
     const { stats } = this.state;
     return (
       <div className="container">
+        <h1 className="app-title">Covid-19 Cases World Wide</h1>
         <CountryList stats={stats} />
       </div>
     );

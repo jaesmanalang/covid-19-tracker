@@ -58,3 +58,12 @@ body {
 svg {
   color: #fff;
 }
+
+.app-title {
+  font-family: Oswald, sans-serif;
+  font-size: 4.4rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 5rem;
+
+}
