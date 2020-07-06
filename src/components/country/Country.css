@@ -9,6 +9,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: transform .2s ease;
+  /* transition-delay: .1s; */
+}
+
+.country-container:hover {
+  transform: scale(1.1);
 }
 
 .country-record {
