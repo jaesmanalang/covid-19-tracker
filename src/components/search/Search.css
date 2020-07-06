@@ -1,0 +1,15 @@
+.search {
+  padding: 15px;
+  border-radius: 5px;
+  border: solid 2px rgb(201, 201, 201);
+  margin: 20px auto;
+  outline: none;
+  width: 500px;
+  max-width: 100%;
+  display: block;
+  font-size: 1.8rem;
+}
+
+.search:focus {
+  border: solid 2px #6c63ff;
+}

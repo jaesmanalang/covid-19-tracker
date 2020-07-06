@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import CountryList from './components/country-list/CountryList';
+import { ReactComponent as Loader } from './loader.svg';
+import Search from './components/search/Search';
 
 class App extends Component {
   constructor(props) {
@@ -7,10 +9,13 @@ class App extends Component {
     this.state = {
       countries: [],
       stats: [],
+      searchField: '',
+      loading: false,
     };
   }
 
   async componentDidMount() {
+    this.setState({ loading: true });
     try {
       const res = await fetch('https://api.covid19api.com/countries');
       const countries = await res.json();
@@ -36,14 +41,30 @@ class App extends Component {
     } catch (err) {
       console.log(err);
     }
+    this.setState({ loading: false });
   }
 
+  handleChange = e => {
+    this.setState({ searchField: e.target.value });
+  };
+
   render() {
-    const { stats } = this.state;
+    const { stats, searchField } = this.state;
+    const filteredCountries = stats.filter(country =>
+      country.Country.toLowerCase().includes(searchField.toLowerCase()),
+    );
     return (
       <div className="container">
         <h1 className="app-title">Covid-19 Cases World Wide</h1>
-        <CountryList stats={stats} />
+        <Search
+          placeholder="Search country..."
+          handleChange={this.handleChange}
+        />
+        {this.state.loading ? (
+          <Loader />
+        ) : (
+          <CountryList stats={filteredCountries} />
+        )}
       </div>
     );
   }

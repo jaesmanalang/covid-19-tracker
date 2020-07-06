@@ -8,7 +8,6 @@ import virus from './svg/virus.svg';
 const Country = ({ stats }) => {
   return (
     <div className="country-container">
-      {console.log(stats)}
       <h1 className="country-title">{stats.Country}</h1>
       <img
         src={`https://www.countryflags.io/${stats.CountryCode}/flat/64.png`}

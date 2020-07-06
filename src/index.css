@@ -7,7 +7,7 @@
   --on-primary: rgb(250, 250, 250);
   --on-background: rgb(66, 66, 66);
   --on-background-alt: rgba(66, 66, 66, 0.7);
-  --background: rgb(245, 245, 245);
+  --background: rgb(243, 243, 243);
   /* --primary-color: rgb(150, 65, 255);
   --primary-variant: #6c63ff;
   --secondary-color: #03dac5;
@@ -64,6 +64,27 @@ svg {
   font-size: 4.4rem;
   color: var(--primary-color);
   text-align: center;
-  margin: 5rem;
 
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+
+  .app-title {
+    font-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  html {
+    font-size: 37.5%;
+  }
+
+  .country-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
