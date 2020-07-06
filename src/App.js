@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import CountryList from './components/country-list/CountryList';
 import { ReactComponent as Loader } from './loader.svg';
 import Search from './components/search/Search';
